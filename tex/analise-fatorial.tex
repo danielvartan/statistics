@@ -1,0 +1,165 @@
+\section{Análise Fatorial \cite{torres}}
+
+    (...)
+
+	\subsection{O que é?}
+
+        É o conjunto de técnicas estatísticas, que procura explicar a correlação entre as variáveis observáveis, simplificando os dados através da redução do número...
+        
+    \subsection{Objetivos}
+    
+        O objetivo principal da análise fatorial é a redução da massa de dados altamente relacionados. Entretanto, a redução não implica em admitir perda do comportamento das variáveis originais. Nesse sentido quer-se reduzir a massa de dados, mas ao mesmo tempo, preservar ao máximo as características comportamentais do conjunto de variáveis.
+        
+        A análise fatorial também é utilizada para gerar fatores compostos pelas variáveis originais, que podem ser utilizados em outras técnicas de análise multivariada.
+        
+        Como os fatores gerados em uma análise fatorial podem não apresentar correlação entre si, então podem ser utilizados para resolver o problema de variáveis multi-correlacionadas na regressão.
+        
+    \subsection{Dimensão da Amostra}
+    
+        O mínimo de respostas válidas ($N$) por variáveis ($K$) é:
+        
+        $
+        N = 50 \text{se} K <= 5
+        N = 10 * K se 5 < K <= 15
+        N = 5 * K se K > 15
+        $
+        
+        (Gráfico)
+        
+    \subsection{Análise Fatorial Exploratória e de Confirmação}
+    
+    \subsection{Exemplo:}
+    
+        Phil gostaria de saber se poderia simplificar seu entendimento das percepções dos dois restaurantes, reduzindo o número de variáveis para menos de 12 (tratar como amostra única). Isto é, se ele pode representar as 12 variáveis originais de percepção ($X_{1}$ até $X_{12}$) com um número menor de fatores significativos. A que resultados chegou o consultor?
+        
+        \subsubsection{Variáveis do banco de dados}
+        
+            \textbf{X1} - Comida de excelente qualidade
+            
+            \textbf{X2} - Um interior atraente
+            
+            \textbf{X3} - Porções generosas
+            
+            \textbf{X4} - Comida de gosto excelente
+            
+            \textbf{X5} - Bom valor para o dinheiro
+            
+            \textbf{X6} - Funcionários simpáticos
+            
+            \textbf{X7} - Aparência limpa e organizada
+            
+            \textbf{X8} - Um ambiente divertido
+            
+            \textbf{X9} - Grande variedade de pratos
+            
+            \textbf{X10} - Preços razoáveis
+            
+            \textbf{X11} - Funcionários gentis
+            
+            \textbf{X12} - Funcionários competentes
+            
+    \subsection{Premissas:}
+    
+        A análise fatorial possui algumas premissas:
+        
+        1a \textbf{As variáveis devem ser medidas em escala intervalar ou razão};
+        
+        2a As variáveis envolvidas na análise devem ser normalmente distribuídas;
+        
+        3a Se as variáveis envolvidas na análise estiverem medidas em escalas diferentes, as mesmas devem ser padronizadas antes de proceder a análise.
+        
+        \subsubsection{Quando os Dados não são Normais}
+    
+            Neste caso, devemos proceder da seguinte maneira: (1) usar uma transformação matemática que normalize a variável e usar a nova variável no lugar da original não normal; ou (2) alguns autores dizem que uma variável mesmo que não seja normalmente distribuída, pode ser incluída na análise fatorial, se apresentar simetria.
+        
+            Para verificar se as variáveis, mesmo não sendo normais, tem distribuição simétrica: calcular a assimetria e dividir (Stat/Std. Error). Se o valor estiver contido no intervalo [-1.96; 1,96] podemos supor que exista uma distribuição simétrica.
+        
+    \subsubsection{Próximo Passo}
+        
+    \subsection{Rotação de Fatores}
+        
+        A matriz de fatores contém os coeficientes utilizados para expressar as variáveis em termos dos fatores. Esses coeficientes, chamados de cargas fatoriais, representam as correlações entres os fatores e as variáveis. Um coeficiente com valor absoluto grande, indica que o fator e a avariável estão estritamente relacionados.
+            
+        Ao fazer a rotação dos fatores, seria interessante que cada variável tivesse coeficiente diferente de zero ou significativos com poucos fatores, sendo o ideal com apenas um, pois se vários fatores têm altas cargas com a mesma variável, tona difícil interpretá-los.
+            
+        \subsubsection{Tipo de Rotação de Fatores:}
+            
+            \textbf{Ortogonais}: rotação de fatores em que os eixos são mantidos em ângulos retos. A rotação ortogonal tem como resultado fatores não-correlacionados (varimax, quartimax e equamax). O mais utilizado é o varimax, que minimiza o número de variáveis com altas cargas sobre um fator, facilitando assim, a interpretação dos fatores.
+                
+            \textbf{Oblíquas}: rotação de fatores em que os eixos não são mantidos em ângulos retos. Deve-se utilizar rotação oblíqua quando os fatores na população tendem a ser fortemente correlacionados (direct oblimin e promax)
+                
+    \subsection{Tipos de Extração de Fatores:}
+        
+        \textbf{Componentes principais}: Geralmente usamos o padrão: \textbf{Análise de Componentes Principais}. No SPSS, bem como em outros pacotes de software de estatística, o PCA é o método padrão para a extração de análise fatorial. Ele não é especificamente um método de análise fatorial , mas é amplamente usado como um método de extração.
+            
+        É um procedimento estatístico multivariado, que permite transformar um conjunto de variáveis \textbf{quantitativas iniciais}, correlacionadas entre si, em outro conjunto com um menor número de variáveis não correlacionadas reduzindo a complexidade dos dados. \textbf{Não pressupõe a normalidade}, mas sua ausência ou presença de \textit{outliers} \textbf{pode} provocar distorções.
+            
+        As componentes principais são calculadas por ordem decrescente de importância, isto é, a primeira explica a máxima variâncias dos dados, segunda a máxima variância ainda não explicada pela primeira, e assim sucessivamente. A última componente será a que menos explica a variância total dos dados.
+            
+        \\
+            
+        \textbf{Máxima Verossimilhança}: a \textbf{normalidade é um pressuposto exigido} por esse método, isto é, ele assume que os dados provém de uma distribuição normal \textbf{multivariada}.
+            
+        Não é simplesmente fazer o teste de Komolgrov, é preciso calcular o teste "PK de Mardia" - que junto as variáveis em uma só e testa sua normalidade;
+            
+        \\
+            
+        \textbf{Eixo Principal de Fatoração ou Análise Fatorial Comum}: Opte pela Análise Fatorial Comum \textbf{se os seus dados são significativamente anormais}. Esse método de extração ...
+        
+    \subsection{KMO}
+    
+        Para se poder aplicar o modelo fatorial, deve haver correlação entre as variáveis. Se essas correlações forem pequenas é pouco provável que partilhem fatores comuns.
+        
+        O KMO é um procedimentto estatístico que permite aferir a qualidade das correlações entre as variáveis de forma a prosseguir com a análise fatorial
+        
+        ...
+        
+    \subsection{Teste de Esfericidade de Bartlett}
+        
+        O teste de Esfericidade de Bartlett testa a hipótese de que há correlação entre algumas variáveis.
+        
+        \textbf{Este teste requer que os dados provenham de uma população normal multivariada}. No entanto, este teste é muito influenciado pelo tamanhos da amostra, e eleva a rejeitar a hipótese nula em grandes amostras. Neste caso, é preferível o uso do KMO.
+    
+    \subsection{Extração de Fatores}
+    
+        O número de fatores necessários para descrever os dados, pode ser obtido através de um dos seguintes procedimentos:
+        
+        *K = número de variáveis.
+        
+        \\
+        
+        1. \textbf{para $K <= 30$}, usar o critério de Kaiser, pelo qual se escolhem os fatores cuja variância explicada é superior a 1 (eigenvalues $> 1$);
+        
+        \\
+        
+        2.\textbf{para $K > 30$}m usar o Scree Plot, isto é, o gráfico da variância pelo número de componente, onde os pontos no maior declive são indicativos do número apropriado de componentes a reter.
+        
+        \\
+        
+        Quando o número de casos é superior a 250 e o valor médio das comunalidades é grande ($>= 0,6$), ambos os critérios fornecem o mesmo resultado.
+        
+        Quando as comunalidades são pelo menos $0,6$ e o número de variáveis é inferior a 30 ou o número de observações é superior a 250, tanto o critério de Kaiser, como o Scree Plot, geram soluções confiáveis quanto ao número de fatores a reter. Essa credibilidade é aumentada quando o quociente entre o número de fatores retidos e o número de variáveis iniciais é inferior a $0,3$.
+        
+    \subsection{Matriz de Anti-Imagem}
+    
+        A matriz de anti-imagem é uma medida de adequação amostral de cada variável (MAS) para uso da análise fatorial onde pequenos valores (menores que $0,5$) na diagonal principal nos levam a considerar a eliminação da variável.
+        
+    \subsection{Comunalidade}
+    
+        Pelo quadro das comunalidades podemos observar que todas as variáveis possuem uma forte relação cpom os fatores encontrados, exceto as variáveis X7 e X10 que estão bem próximas do limite $0,6$.
+        
+    \subsection{Matriz de Componentes}
+    
+        A matriz dos componentes mostra as coeficientes ou pesos que correlacionam as variáveis aos fatores antes da rotação.
+        
+        Espera-se que não hajam pesos elevados, em mais de um fator, para uma mesma variável, pois isto dificultaria a interpretação. Muitas vezes a extração inicial ou anterior à rotação não fornece fatores interpretáveis.
+        
+        Na análise fatorial, quando há variáveis com baixos pesos, não se controla a sua influência eliminando-as e usando apenas as variáveis com pesos elevados. Cabe ao pesquisador excluí-las ou não da análise, de acordo com o fundamento teórico subjacente.
+        
+    \subsection{Matriz de Componentes após Rotação}
+    
+        A matriz dos componentes após a rotação ortogonal é útil para designar o significado dos fatores, essencialmente quando as variáveis têm pesos elevados ...
+        
+    \subsection{Nomeando os Fatores}
+    
+    ...
